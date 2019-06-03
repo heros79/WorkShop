@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  #Spring JDBC configuration
+  datasource:
+    url:      jdbc:mysql://127.0.0.1:3306/workshop
+    username: root
+    password: root
+
+
+    #Spring Data JPA configuration
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL55Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  messages:
+    basename: validation
+
+logging:
+  file: log.txt
