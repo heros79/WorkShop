@@ -1,5 +1,6 @@
 package am.work.shop.model;
 
+import am.work.shop.model.rf.UnitMeasurement;
 import lombok.*;
 
 import java.io.Serializable;
@@ -14,8 +15,7 @@ public class Good implements Serializable {
 
     private Integer id;
     private String goodName;
-    private Double unitMeasurment;
-    private Double countInShop;
-    private Double countInStock;
+    private String goodDescription;
+    private UnitMeasurement unitMeasurement;
 
 }
