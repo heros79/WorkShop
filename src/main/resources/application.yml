@@ -4,12 +4,22 @@ server:
 spring:
   #Spring JDBC configuration
   datasource:
-    url:      jdbc:mysql://127.0.0.1:3306/workshop
-    username: root
-    password: root
+    url: jdbc:mysql://127.0.0.1:3306/workshop?verifyServerCertificate=false&useSSL=false&requireSSL=false
+
+    hikari:
+      connection-timeout: 100000000
+      maximum-pool-size: 5
+    tomcat:
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 1
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/workshop?verifyServerCertificate=false&useSSL=false&requireSSL=false
 
 
-    #Spring Data JPA configuration
+  #Spring Data JPA configuration
   jpa:
     database-platform: org.hibernate.dialect.MySQL55Dialect
     hibernate:
@@ -17,6 +27,9 @@ spring:
     show-sql: true
   messages:
     basename: validation
-
+  data:
+    jpa:
+      repositories:
+        enabled: true
 logging:
   file: log.txt
