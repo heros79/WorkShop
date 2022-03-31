@@ -13,7 +13,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.boot.version>2.0.1.RELEASE</spring.boot.version>
+        <spring.boot.version>2.5.12</spring.boot.version>
         <start-class>am.work.shop.Application</start-class>
     </properties>
 
